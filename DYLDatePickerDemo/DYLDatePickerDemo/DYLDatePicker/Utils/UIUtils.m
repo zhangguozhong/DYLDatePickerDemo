@@ -51,10 +51,10 @@
 
 + (UIButton *)buttonWithTitle:(NSString *)title titleColor:(UIColor *)titleColor fontSize:(CGFloat)size cornerRadius:(CGFloat)cornerRadius
 {
-    return [self buttonWithBackgroundColor:[UIColor clearColor] titleColor:titleColor selectedBackgroundColor:[UIColor clearColor] title:title fontSize:size cornerRadius:cornerRadius];
+    return [self buttonWithBackgroundColor:[UIColor clearColor] titleColor:titleColor selectedColor:[UIColor clearColor] title:title fontSize:size cornerRadius:cornerRadius];
 }
 
-+ (UIButton *)buttonWithBackgroundColor:(UIColor *)backgroundColor titleColor:(UIColor *)titleColor selectedBackgroundColor:(UIColor *)selectedBackgroundColor title:(NSString *)title fontSize:(CGFloat)size cornerRadius:(CGFloat)cornerRadius
++ (UIButton *)buttonWithBackgroundColor:(UIColor *)backgroundColor titleColor:(UIColor *)titleColor selectedColor:(UIColor *)selectedColor title:(NSString *)title fontSize:(CGFloat)size cornerRadius:(CGFloat)cornerRadius
 {
     UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
     [button setTitle:title forState:UIControlStateNormal];
@@ -64,8 +64,8 @@
     [button setTitleColor:titleColor forState:UIControlStateNormal];
     [button setTitleColor:titleColor forState:UIControlStateSelected];
     [button setBackgroundImage:[UIImage imageWithColor:backgroundColor] forState:UIControlStateNormal];
-    [button setBackgroundImage:[UIImage imageWithColor:backgroundColor] forState:UIControlStateDisabled];
-    [button setBackgroundImage:[UIImage imageWithColor:selectedBackgroundColor] forState:UIControlStateSelected];
+    [button setBackgroundImage:[UIImage imageWithColor:selectedColor] forState:UIControlStateDisabled];
+    [button setBackgroundImage:[UIImage imageWithColor:selectedColor] forState:UIControlStateSelected];
     return button;
 }
 

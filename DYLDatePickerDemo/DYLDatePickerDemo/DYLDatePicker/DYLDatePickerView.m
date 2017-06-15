@@ -13,6 +13,7 @@
 
 #define mScreenWidth  ([UIScreen mainScreen].bounds.size.width)
 #define mScreenHeight ([UIScreen mainScreen].bounds.size.height)
+#define mEmptyStr @""
 
 #define mBlueColor [UIColor colorWithRed:50.0/255.0 green:162.0/255.0 blue:248.0/255.0 alpha:1.0]
 #define mGrayColor [UIColor colorWithRed:165/255.0 green:165/255.0 blue:165/255.0 alpha:1.0]
@@ -63,8 +64,6 @@ static CGFloat const DYLDatePickerButtonHeight = 30;
 - (void)commonInit
 {
     self.duration = DYLDatePickerAnimationDuration;
-    self.beginDateStr = @"";
-    self.endDateStr = @"";
 }
 
 - (void)createBgView
@@ -79,7 +78,7 @@ static CGFloat const DYLDatePickerButtonHeight = 30;
 
 - (void)createDatePickerView
 {
-    self.dateSegmentView = [UIUtils segmentViewWithTintColor:[UIColor redColor] items:@[@"开始时间", @"结束时间"]];
+    self.dateSegmentView = [UIUtils segmentViewWithTintColor:mBlueColor items:@[@"开始时间", @"结束时间"]];
     self.dateSegmentView.selectedSegmentIndex = 0;
     [self.dateSegmentView addTarget:self action:@selector(segmentAction:) forControlEvents:UIControlEventValueChanged];
     [self addSubview:self.dateSegmentView];
@@ -92,7 +91,7 @@ static CGFloat const DYLDatePickerButtonHeight = 30;
     [self.sureDateButton addTarget:self action:@selector(sureDateButtonClick:) forControlEvents:UIControlEventTouchUpInside];
     [self.sureDateView addSubview:self.sureDateButton];
     
-    self.tipLabel = [UIUtils labelWithTextColor:mGrayColor textAlignment:NSTextAlignmentLeft text:@"请选择时间" fontSize:15.f];
+    self.tipLabel = [UIUtils labelWithTextColor:mGrayColor textAlignment:NSTextAlignmentLeft text:@"选择开始时间和结束时间" fontSize:14.f];
     [self.sureDateView addSubview:self.tipLabel];
     
     
@@ -103,7 +102,7 @@ static CGFloat const DYLDatePickerButtonHeight = 30;
     self.bottomView = [UIUtils viewWithBackgroudColor:[UIColor whiteColor]];
     [self addSubview:self.bottomView];
     
-    self.completeRefreshButton = [UIUtils buttonWithBackgroundColor:[UIColor lightGrayColor] titleColor:[UIColor whiteColor] selectedBackgroundColor:[UIColor lightGrayColor] title:@"确定" fontSize:15.f cornerRadius:3.f];
+    self.completeRefreshButton = [UIUtils buttonWithBackgroundColor:mBlueColor titleColor:[UIColor whiteColor] selectedColor:[UIColor lightGrayColor] title:@"确定" fontSize:15.f cornerRadius:3.f];
     self.completeRefreshButton.enabled = NO;
     [self.completeRefreshButton addTarget:self action:@selector(callback) forControlEvents:UIControlEventTouchUpInside];
     [self.bottomView addSubview:self.completeRefreshButton];
@@ -188,13 +187,13 @@ static CGFloat const DYLDatePickerButtonHeight = 30;
     self.dateType = sender.selectedSegmentIndex;
     switch (_dateType) {
         case DYLDateTypeStartDate: {
-            if (_beginDateStr.length > 0) {
+            if (_beginDateStr) {
                 [self.datePicker setDate:[[DYLDatePickerManager sharedManager].formatter dateFromString:_beginDateStr] animated:YES];
             }
             break;
         }
         case DYLDateTypeEndDate: {
-            if (_endDateStr.length > 0) {
+            if (_endDateStr) {
                 [self.datePicker setDate:[[DYLDatePickerManager sharedManager].formatter dateFromString:_endDateStr] animated:YES];
             }
             break;
@@ -206,15 +205,14 @@ static CGFloat const DYLDatePickerButtonHeight = 30;
 
 - (void)refreshDatePickerView
 {
-    self.tipLabel.text = [NSString stringWithFormat:@"%@ 至 %@", _beginDateStr, _endDateStr];
-    self.completeRefreshButton.enabled = (_beginDateStr.length > 0 && _endDateStr.length > 0);
+    self.tipLabel.text = [NSString stringWithFormat:@"%@ 至 %@", _beginDateStr ? _beginDateStr : mEmptyStr, _endDateStr ? _endDateStr : mEmptyStr];
+    self.completeRefreshButton.enabled = _beginDateStr && _endDateStr;
     
     if (self.completeRefreshButton.enabled) {
         NSInteger distanceDays = [[DYLDatePickerManager sharedManager] distanceFrom:_beginDateStr to:_endDateStr];
-        
         if (distanceDays > self.maximumIntervalDay) {
             self.completeRefreshButton.enabled = NO;
-            [self.completeRefreshButton setTitle:@"时间间隔最大90天" forState:UIControlStateDisabled];
+            [self.completeRefreshButton setTitle:@"超过规定时间间隔" forState:UIControlStateDisabled];
         } else {
             if (distanceDays < 0) {
                 self.completeRefreshButton.enabled = NO;
@@ -270,6 +268,7 @@ static CGFloat const DYLDatePickerButtonHeight = 30;
         if (finished) {
             self.bgView.hidden = YES;
             [self.bgView removeFromSuperview];
+            [self.subviews makeObjectsPerformSelector:@selector(removeFromSuperview)];
             [self removeFromSuperview];
         }
     }];

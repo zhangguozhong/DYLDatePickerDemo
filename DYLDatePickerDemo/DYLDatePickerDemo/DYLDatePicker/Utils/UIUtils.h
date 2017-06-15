@@ -20,7 +20,7 @@
 
 + (UIButton *)buttonWithTitle:(NSString *)title fontSize:(CGFloat)size;
 + (UIButton *)buttonWithTitle:(NSString *)title titleColor:(UIColor *)titleColor fontSize:(CGFloat)size cornerRadius:(CGFloat)cornerRadius;
-+ (UIButton *)buttonWithBackgroundColor:(UIColor *)backgroundColor titleColor:(UIColor *)titleColor selectedBackgroundColor:(UIColor *)selectedBackgroundColor title:(NSString *)title fontSize:(CGFloat)size cornerRadius:(CGFloat)cornerRadius;
++ (UIButton *)buttonWithBackgroundColor:(UIColor *)backgroundColor titleColor:(UIColor *)titleColor selectedColor:(UIColor *)selectedColor title:(NSString *)title fontSize:(CGFloat)size cornerRadius:(CGFloat)cornerRadius;
 
 
 + (UIView *)viewWithBackgroudColor:(UIColor *)backgroundColor;
