@@ -1,0 +1,562 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2FFC43D81EF272F500527DB3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FFC43D71EF272F500527DB3 /* main.m */; };
+		2FFC43DB1EF272F500527DB3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FFC43DA1EF272F500527DB3 /* AppDelegate.m */; };
+		2FFC43DE1EF272F500527DB3 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FFC43DD1EF272F500527DB3 /* ViewController.m */; };
+		2FFC43E11EF272F500527DB3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2FFC43DF1EF272F500527DB3 /* Main.storyboard */; };
+		2FFC43E31EF272F500527DB3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2FFC43E21EF272F500527DB3 /* Assets.xcassets */; };
+		2FFC43E61EF272F500527DB3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2FFC43E41EF272F500527DB3 /* LaunchScreen.storyboard */; };
+		2FFC43F11EF272F500527DB3 /* DYLDatePickerDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FFC43F01EF272F500527DB3 /* DYLDatePickerDemoTests.m */; };
+		2FFC43FE1EF2736A00527DB3 /* DYLDatePickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FFC43FD1EF2736A00527DB3 /* DYLDatePickerView.m */; };
+		2FFC44041EF273D300527DB3 /* UIImage+ImageWithColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FFC44031EF273D300527DB3 /* UIImage+ImageWithColor.m */; };
+		2FFC44071EF2740900527DB3 /* UIUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FFC44061EF2740900527DB3 /* UIUtils.m */; };
+		2FFC440A1EF2745300527DB3 /* DYLDatePickerManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FFC44091EF2745300527DB3 /* DYLDatePickerManager.m */; };
+		96BD3938EBDC752DDA7EE3A0 /* libPods-DYLDatePickerDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 89E981CDC5EBABD28197D005 /* libPods-DYLDatePickerDemo.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		2FFC43ED1EF272F500527DB3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2FFC43CB1EF272F500527DB3 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2FFC43D21EF272F500527DB3;
+			remoteInfo = DYLDatePickerDemo;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		02B0E5CB8A2EA5D4E3C91D5A /* Pods-DYLDatePickerDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DYLDatePickerDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-DYLDatePickerDemo/Pods-DYLDatePickerDemo.release.xcconfig"; sourceTree = "<group>"; };
+		2FFC43D31EF272F500527DB3 /* DYLDatePickerDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DYLDatePickerDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2FFC43D71EF272F500527DB3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		2FFC43D91EF272F500527DB3 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		2FFC43DA1EF272F500527DB3 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		2FFC43DC1EF272F500527DB3 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		2FFC43DD1EF272F500527DB3 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		2FFC43E01EF272F500527DB3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		2FFC43E21EF272F500527DB3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		2FFC43E51EF272F500527DB3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		2FFC43E71EF272F500527DB3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2FFC43EC1EF272F500527DB3 /* DYLDatePickerDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DYLDatePickerDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		2FFC43F01EF272F500527DB3 /* DYLDatePickerDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DYLDatePickerDemoTests.m; sourceTree = "<group>"; };
+		2FFC43F21EF272F500527DB3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2FFC43FC1EF2736A00527DB3 /* DYLDatePickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DYLDatePickerView.h; sourceTree = "<group>"; };
+		2FFC43FD1EF2736A00527DB3 /* DYLDatePickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DYLDatePickerView.m; sourceTree = "<group>"; };
+		2FFC44021EF273D300527DB3 /* UIImage+ImageWithColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+ImageWithColor.h"; sourceTree = "<group>"; };
+		2FFC44031EF273D300527DB3 /* UIImage+ImageWithColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ImageWithColor.m"; sourceTree = "<group>"; };
+		2FFC44051EF2740900527DB3 /* UIUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIUtils.h; sourceTree = "<group>"; };
+		2FFC44061EF2740900527DB3 /* UIUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIUtils.m; sourceTree = "<group>"; };
+		2FFC44081EF2745300527DB3 /* DYLDatePickerManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DYLDatePickerManager.h; sourceTree = "<group>"; };
+		2FFC44091EF2745300527DB3 /* DYLDatePickerManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DYLDatePickerManager.m; sourceTree = "<group>"; };
+		89E981CDC5EBABD28197D005 /* libPods-DYLDatePickerDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-DYLDatePickerDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		BF8685A160627B9F45ED15C7 /* Pods-DYLDatePickerDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DYLDatePickerDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DYLDatePickerDemo/Pods-DYLDatePickerDemo.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		2FFC43D01EF272F500527DB3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				96BD3938EBDC752DDA7EE3A0 /* libPods-DYLDatePickerDemo.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2FFC43E91EF272F500527DB3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2FFC43CA1EF272F500527DB3 = {
+			isa = PBXGroup;
+			children = (
+				2FFC43D51EF272F500527DB3 /* DYLDatePickerDemo */,
+				2FFC43EF1EF272F500527DB3 /* DYLDatePickerDemoTests */,
+				2FFC43D41EF272F500527DB3 /* Products */,
+				C0C1CCB1D1D5E39CFC9DFF30 /* Pods */,
+				62F94A5F0D59A123C48A66A7 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		2FFC43D41EF272F500527DB3 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2FFC43D31EF272F500527DB3 /* DYLDatePickerDemo.app */,
+				2FFC43EC1EF272F500527DB3 /* DYLDatePickerDemoTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		2FFC43D51EF272F500527DB3 /* DYLDatePickerDemo */ = {
+			isa = PBXGroup;
+			children = (
+				2FFC43FB1EF2734900527DB3 /* DYLDatePicker */,
+				2FFC43D91EF272F500527DB3 /* AppDelegate.h */,
+				2FFC43DA1EF272F500527DB3 /* AppDelegate.m */,
+				2FFC43DC1EF272F500527DB3 /* ViewController.h */,
+				2FFC43DD1EF272F500527DB3 /* ViewController.m */,
+				2FFC43DF1EF272F500527DB3 /* Main.storyboard */,
+				2FFC43E21EF272F500527DB3 /* Assets.xcassets */,
+				2FFC43E41EF272F500527DB3 /* LaunchScreen.storyboard */,
+				2FFC43E71EF272F500527DB3 /* Info.plist */,
+				2FFC43D61EF272F500527DB3 /* Supporting Files */,
+			);
+			path = DYLDatePickerDemo;
+			sourceTree = "<group>";
+		};
+		2FFC43D61EF272F500527DB3 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				2FFC43D71EF272F500527DB3 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		2FFC43EF1EF272F500527DB3 /* DYLDatePickerDemoTests */ = {
+			isa = PBXGroup;
+			children = (
+				2FFC43F01EF272F500527DB3 /* DYLDatePickerDemoTests.m */,
+				2FFC43F21EF272F500527DB3 /* Info.plist */,
+			);
+			path = DYLDatePickerDemoTests;
+			sourceTree = "<group>";
+		};
+		2FFC43FB1EF2734900527DB3 /* DYLDatePicker */ = {
+			isa = PBXGroup;
+			children = (
+				2FFC44011EF273A800527DB3 /* Categories */,
+				2FFC44001EF2739600527DB3 /* Utils */,
+				2FFC43FF1EF2738000527DB3 /* DYLDatePickerManager */,
+				2FFC43FC1EF2736A00527DB3 /* DYLDatePickerView.h */,
+				2FFC43FD1EF2736A00527DB3 /* DYLDatePickerView.m */,
+			);
+			path = DYLDatePicker;
+			sourceTree = "<group>";
+		};
+		2FFC43FF1EF2738000527DB3 /* DYLDatePickerManager */ = {
+			isa = PBXGroup;
+			children = (
+				2FFC44081EF2745300527DB3 /* DYLDatePickerManager.h */,
+				2FFC44091EF2745300527DB3 /* DYLDatePickerManager.m */,
+			);
+			path = DYLDatePickerManager;
+			sourceTree = "<group>";
+		};
+		2FFC44001EF2739600527DB3 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				2FFC44051EF2740900527DB3 /* UIUtils.h */,
+				2FFC44061EF2740900527DB3 /* UIUtils.m */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		2FFC44011EF273A800527DB3 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				2FFC44021EF273D300527DB3 /* UIImage+ImageWithColor.h */,
+				2FFC44031EF273D300527DB3 /* UIImage+ImageWithColor.m */,
+			);
+			path = Categories;
+			sourceTree = "<group>";
+		};
+		62F94A5F0D59A123C48A66A7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				89E981CDC5EBABD28197D005 /* libPods-DYLDatePickerDemo.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C0C1CCB1D1D5E39CFC9DFF30 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				BF8685A160627B9F45ED15C7 /* Pods-DYLDatePickerDemo.debug.xcconfig */,
+				02B0E5CB8A2EA5D4E3C91D5A /* Pods-DYLDatePickerDemo.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		2FFC43D21EF272F500527DB3 /* DYLDatePickerDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2FFC43F51EF272F500527DB3 /* Build configuration list for PBXNativeTarget "DYLDatePickerDemo" */;
+			buildPhases = (
+				08BEB5AB32D7C40E21E8069D /* [CP] Check Pods Manifest.lock */,
+				2FFC43CF1EF272F500527DB3 /* Sources */,
+				2FFC43D01EF272F500527DB3 /* Frameworks */,
+				2FFC43D11EF272F500527DB3 /* Resources */,
+				E2948681F0DFF1EFB542AABC /* [CP] Embed Pods Frameworks */,
+				7CF964468357FED78376DF6C /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DYLDatePickerDemo;
+			productName = DYLDatePickerDemo;
+			productReference = 2FFC43D31EF272F500527DB3 /* DYLDatePickerDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
+		2FFC43EB1EF272F500527DB3 /* DYLDatePickerDemoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2FFC43F81EF272F500527DB3 /* Build configuration list for PBXNativeTarget "DYLDatePickerDemoTests" */;
+			buildPhases = (
+				2FFC43E81EF272F500527DB3 /* Sources */,
+				2FFC43E91EF272F500527DB3 /* Frameworks */,
+				2FFC43EA1EF272F500527DB3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2FFC43EE1EF272F500527DB3 /* PBXTargetDependency */,
+			);
+			name = DYLDatePickerDemoTests;
+			productName = DYLDatePickerDemoTests;
+			productReference = 2FFC43EC1EF272F500527DB3 /* DYLDatePickerDemoTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		2FFC43CB1EF272F500527DB3 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0830;
+				ORGANIZATIONNAME = mannyi;
+				TargetAttributes = {
+					2FFC43D21EF272F500527DB3 = {
+						CreatedOnToolsVersion = 8.3.2;
+						ProvisioningStyle = Automatic;
+					};
+					2FFC43EB1EF272F500527DB3 = {
+						CreatedOnToolsVersion = 8.3.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 2FFC43D21EF272F500527DB3;
+					};
+				};
+			};
+			buildConfigurationList = 2FFC43CE1EF272F500527DB3 /* Build configuration list for PBXProject "DYLDatePickerDemo" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 2FFC43CA1EF272F500527DB3;
+			productRefGroup = 2FFC43D41EF272F500527DB3 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				2FFC43D21EF272F500527DB3 /* DYLDatePickerDemo */,
+				2FFC43EB1EF272F500527DB3 /* DYLDatePickerDemoTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		2FFC43D11EF272F500527DB3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2FFC43E61EF272F500527DB3 /* LaunchScreen.storyboard in Resources */,
+				2FFC43E31EF272F500527DB3 /* Assets.xcassets in Resources */,
+				2FFC43E11EF272F500527DB3 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2FFC43EA1EF272F500527DB3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		08BEB5AB32D7C40E21E8069D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		7CF964468357FED78376DF6C /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DYLDatePickerDemo/Pods-DYLDatePickerDemo-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E2948681F0DFF1EFB542AABC /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DYLDatePickerDemo/Pods-DYLDatePickerDemo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2FFC43CF1EF272F500527DB3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2FFC44041EF273D300527DB3 /* UIImage+ImageWithColor.m in Sources */,
+				2FFC43DE1EF272F500527DB3 /* ViewController.m in Sources */,
+				2FFC43DB1EF272F500527DB3 /* AppDelegate.m in Sources */,
+				2FFC43FE1EF2736A00527DB3 /* DYLDatePickerView.m in Sources */,
+				2FFC43D81EF272F500527DB3 /* main.m in Sources */,
+				2FFC440A1EF2745300527DB3 /* DYLDatePickerManager.m in Sources */,
+				2FFC44071EF2740900527DB3 /* UIUtils.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2FFC43E81EF272F500527DB3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2FFC43F11EF272F500527DB3 /* DYLDatePickerDemoTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		2FFC43EE1EF272F500527DB3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2FFC43D21EF272F500527DB3 /* DYLDatePickerDemo */;
+			targetProxy = 2FFC43ED1EF272F500527DB3 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		2FFC43DF1EF272F500527DB3 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2FFC43E01EF272F500527DB3 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		2FFC43E41EF272F500527DB3 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2FFC43E51EF272F500527DB3 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		2FFC43F31EF272F500527DB3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		2FFC43F41EF272F500527DB3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		2FFC43F61EF272F500527DB3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BF8685A160627B9F45ED15C7 /* Pods-DYLDatePickerDemo.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = DYLDatePickerDemo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.mannyi.DYLDatePickerDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		2FFC43F71EF272F500527DB3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 02B0E5CB8A2EA5D4E3C91D5A /* Pods-DYLDatePickerDemo.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = DYLDatePickerDemo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.mannyi.DYLDatePickerDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		2FFC43F91EF272F500527DB3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = DYLDatePickerDemoTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.mannyi.DYLDatePickerDemoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DYLDatePickerDemo.app/DYLDatePickerDemo";
+			};
+			name = Debug;
+		};
+		2FFC43FA1EF272F500527DB3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = DYLDatePickerDemoTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.mannyi.DYLDatePickerDemoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DYLDatePickerDemo.app/DYLDatePickerDemo";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2FFC43CE1EF272F500527DB3 /* Build configuration list for PBXProject "DYLDatePickerDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2FFC43F31EF272F500527DB3 /* Debug */,
+				2FFC43F41EF272F500527DB3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2FFC43F51EF272F500527DB3 /* Build configuration list for PBXNativeTarget "DYLDatePickerDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2FFC43F61EF272F500527DB3 /* Debug */,
+				2FFC43F71EF272F500527DB3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2FFC43F81EF272F500527DB3 /* Build configuration list for PBXNativeTarget "DYLDatePickerDemoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2FFC43F91EF272F500527DB3 /* Debug */,
+				2FFC43FA1EF272F500527DB3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 2FFC43CB1EF272F500527DB3 /* Project object */;
+}
