@@ -48,9 +48,9 @@ static CGFloat const DYLDatePickerButtonHeight = 30;
     self = [super init];
     if (self) {
         self.frame = CGRectMake(0, mScreenHeight, mScreenWidth, 320);
-        self.duration = DYLDatePickerAnimationDuration;
         self.backgroundColor = [UIColor whiteColor];
         
+        [self commonInit];
         [self createBgView];
         [self createDatePickerView];
         [self configDatePickerView];
@@ -58,7 +58,15 @@ static CGFloat const DYLDatePickerButtonHeight = 30;
     return self;
 }
 
+
 #pragma mark - Private Method
+- (void)commonInit
+{
+    self.duration = DYLDatePickerAnimationDuration;
+    self.beginDateStr = @"";
+    self.endDateStr = @"";
+}
+
 - (void)createBgView
 {
     self.bgView = [[UIView alloc] initWithFrame:[UIScreen mainScreen].bounds];
@@ -77,14 +85,14 @@ static CGFloat const DYLDatePickerButtonHeight = 30;
     [self addSubview:self.dateSegmentView];
     
     
-    self.sureDateView = [UIUtils viewWithBackgroudColor:[UIColor redColor]];
+    self.sureDateView = [UIUtils viewWithBackgroudColor:[UIColor whiteColor]];
     [self addSubview:self.sureDateView];
     
     self.sureDateButton = [UIUtils buttonWithTitle:@"确定" titleColor:mBlueColor fontSize:15.f cornerRadius:0.f];
     [self.sureDateButton addTarget:self action:@selector(sureDateButtonClick:) forControlEvents:UIControlEventTouchUpInside];
     [self.sureDateView addSubview:self.sureDateButton];
     
-    self.tipLabel = [UIUtils labelWithTextColor:mGrayColor textAlignment:NSTextAlignmentLeft text:@"开始时间 / 结束时间" fontSize:15.f];
+    self.tipLabel = [UIUtils labelWithTextColor:mGrayColor textAlignment:NSTextAlignmentLeft text:@"请选择时间" fontSize:15.f];
     [self.sureDateView addSubview:self.tipLabel];
     
     
@@ -162,11 +170,11 @@ static CGFloat const DYLDatePickerButtonHeight = 30;
     switch (_dateType) {
         case DYLDateTypeStartDate: {
             self.beginDateStr = [[DYLDatePickerManager sharedManager].formatter stringFromDate:self.datePicker.date];
-            
             break;
         }
         case DYLDateTypeEndDate: {
             self.endDateStr = [[DYLDatePickerManager sharedManager].formatter stringFromDate:self.datePicker.date];
+            break;
         }
         default:
             break;
@@ -180,13 +188,13 @@ static CGFloat const DYLDatePickerButtonHeight = 30;
     self.dateType = sender.selectedSegmentIndex;
     switch (_dateType) {
         case DYLDateTypeStartDate: {
-            if (_beginDateStr) {
+            if (_beginDateStr.length > 0) {
                 [self.datePicker setDate:[[DYLDatePickerManager sharedManager].formatter dateFromString:_beginDateStr] animated:YES];
             }
             break;
         }
         case DYLDateTypeEndDate: {
-            if (_endDateStr) {
+            if (_endDateStr.length > 0) {
                 [self.datePicker setDate:[[DYLDatePickerManager sharedManager].formatter dateFromString:_endDateStr] animated:YES];
             }
             break;
@@ -198,8 +206,8 @@ static CGFloat const DYLDatePickerButtonHeight = 30;
 
 - (void)refreshDatePickerView
 {
-    self.tipLabel.text = [NSString stringWithFormat:@"%@ / %@", _beginDateStr ? _beginDateStr : @"开始时间", _endDateStr ? _endDateStr : @"结束时间"];
-    self.completeRefreshButton.enabled = (self.beginDateStr && self.endDateStr);
+    self.tipLabel.text = [NSString stringWithFormat:@"%@ 至 %@", _beginDateStr, _endDateStr];
+    self.completeRefreshButton.enabled = (_beginDateStr.length > 0 && _endDateStr.length > 0);
     
     if (self.completeRefreshButton.enabled) {
         NSInteger distanceDays = [[DYLDatePickerManager sharedManager] distanceFrom:_beginDateStr to:_endDateStr];
@@ -212,7 +220,7 @@ static CGFloat const DYLDatePickerButtonHeight = 30;
                 self.completeRefreshButton.enabled = NO;
                 [self.completeRefreshButton setTitle:@"开始时间须小于结束时间" forState:UIControlStateDisabled];
             } else {
-                [self.completeRefreshButton setTitle:@"确定" forState:UIControlStateDisabled];
+                [self.completeRefreshButton setTitle:@"确定" forState:UIControlStateNormal];
             }
         }
     }
