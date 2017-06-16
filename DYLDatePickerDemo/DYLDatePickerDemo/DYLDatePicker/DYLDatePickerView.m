@@ -64,6 +64,7 @@ static CGFloat const DYLDatePickerButtonHeight = 30;
 - (void)commonInit
 {
     self.duration = DYLDatePickerAnimationDuration;
+    self.showTopSegmentedControl = YES;
 }
 
 - (void)createBgView
@@ -91,7 +92,7 @@ static CGFloat const DYLDatePickerButtonHeight = 30;
     [self.sureDateButton addTarget:self action:@selector(sureDateButtonClick:) forControlEvents:UIControlEventTouchUpInside];
     [self.sureDateView addSubview:self.sureDateButton];
     
-    self.tipLabel = [UIUtils labelWithTextColor:mGrayColor textAlignment:NSTextAlignmentLeft text:@"选择开始时间和结束时间" fontSize:14.f];
+    self.tipLabel = [UIUtils labelWithTextColor:mGrayColor textAlignment:NSTextAlignmentLeft text:@"开始选择时间" fontSize:14.f];
     [self.sureDateView addSubview:self.tipLabel];
     
     
@@ -157,11 +158,31 @@ static CGFloat const DYLDatePickerButtonHeight = 30;
     }];
 }
 
-
 - (void)setMinLimitDate:(NSString *)minLimitDate
 {
     _minLimitDate = minLimitDate;
     self.datePicker.minimumDate = [[DYLDatePickerManager sharedManager].formatter dateFromString:minLimitDate];
+}
+
+- (void)setShowTopSegmentedControl:(BOOL)showTopSegmentedControl
+{
+    _showTopSegmentedControl = showTopSegmentedControl;
+    if (showTopSegmentedControl && self.dateSegmentView.isHidden) {
+        self.dateSegmentView.hidden = !showTopSegmentedControl;
+        [self.sureDateView mas_remakeConstraints:^(MASConstraintMaker *make) {
+            make.top.equalTo(self.dateSegmentView.mas_bottom).offset(15);
+            make.left.and.right.equalTo(self);
+            make.height.equalTo(@40);
+        }];
+    } else {
+        if (!showTopSegmentedControl && !self.dateSegmentView.isHidden) {
+            self.dateSegmentView.hidden = !showTopSegmentedControl;
+            [self.sureDateView mas_remakeConstraints:^(MASConstraintMaker *make) {
+                make.top.and.left.and.right.equalTo(self);
+                make.height.equalTo(@40);
+            }];
+        }
+    }
 }
 
 - (void)sureDateButtonClick:(UIButton *)sender
@@ -205,20 +226,30 @@ static CGFloat const DYLDatePickerButtonHeight = 30;
 
 - (void)refreshDatePickerView
 {
-    self.tipLabel.text = [NSString stringWithFormat:@"%@ 至 %@", _beginDateStr ? _beginDateStr : mEmptyStr, _endDateStr ? _endDateStr : mEmptyStr];
-    self.completeRefreshButton.enabled = _beginDateStr && _endDateStr;
+    NSString *beginDateStr = _beginDateStr ? _beginDateStr : mEmptyStr;
+    NSString *endDateStr = _endDateStr ? _endDateStr : mEmptyStr;
+    
+    if (self.showTopSegmentedControl) {
+        self.tipLabel.text = [NSString stringWithFormat:@"%@,%@", beginDateStr, endDateStr];
+        self.completeRefreshButton.enabled = _beginDateStr && _endDateStr;
+    } else {
+        self.tipLabel.text = beginDateStr;
+        self.completeRefreshButton.enabled = _beginDateStr || _endDateStr;
+    }
     
     if (self.completeRefreshButton.enabled) {
-        NSInteger distanceDays = [[DYLDatePickerManager sharedManager] distanceFrom:_beginDateStr to:_endDateStr];
-        if (distanceDays > self.maximumIntervalDay) {
-            self.completeRefreshButton.enabled = NO;
-            [self.completeRefreshButton setTitle:@"超过规定时间间隔" forState:UIControlStateDisabled];
-        } else {
-            if (distanceDays < 0) {
+        if (self.showTopSegmentedControl) {
+            NSInteger distanceDays = [[DYLDatePickerManager sharedManager] distanceFrom:_beginDateStr to:_endDateStr];
+            if (distanceDays > self.maximumIntervalDay) {
                 self.completeRefreshButton.enabled = NO;
-                [self.completeRefreshButton setTitle:@"开始时间须小于结束时间" forState:UIControlStateDisabled];
+                [self.completeRefreshButton setTitle:@"超过规定时间间隔" forState:UIControlStateDisabled];
             } else {
-                [self.completeRefreshButton setTitle:@"确定" forState:UIControlStateNormal];
+                if (distanceDays < 0) {
+                    self.completeRefreshButton.enabled = NO;
+                    [self.completeRefreshButton setTitle:@"开始时间须小于结束时间" forState:UIControlStateDisabled];
+                } else {
+                    [self.completeRefreshButton setTitle:@"确定" forState:UIControlStateNormal];
+                }
             }
         }
     }

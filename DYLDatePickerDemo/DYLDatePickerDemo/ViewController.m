@@ -9,7 +9,7 @@
 #import "ViewController.h"
 #import "DYLDatePickerView.h"
 
-@interface ViewController ()
+@interface ViewController () <DYLDatePickerViewDelegate>
 
 @property (strong, nonatomic) UIButton *showDateButton;
 
@@ -36,12 +36,20 @@
     DYLDatePickerView *datePickerView = [[DYLDatePickerView alloc] init];
     datePickerView.maximumIntervalDay = 90;
     datePickerView.minLimitDate = @"2014-04-01";
+    datePickerView.delegate = self;
+    //datePickerView.showTopSegmentedControl = NO;
     
     __weak typeof(self) weakSelf = self;
     datePickerView.completeBlock = ^(NSString *beginDateStr, NSString *endDateStr) {
         [weakSelf.showDateButton setTitle:[NSString stringWithFormat:@"%@-%@", beginDateStr, endDateStr] forState:UIControlStateNormal];
     };
     [datePickerView show];
+}
+
+// 优先执行delegate逻辑
+- (void)callback:(DYLDatePickerView *)datePickerView beginDateStr:(NSString *)beginDateStr endDateStr:(NSString *)endDateStr
+{
+    [self.showDateButton setTitle:[NSString stringWithFormat:@"%@-%@", beginDateStr, endDateStr] forState:UIControlStateNormal];
 }
 
 @end

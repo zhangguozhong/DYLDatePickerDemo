@@ -31,6 +31,9 @@ typedef void(^CallbackCompleteBlock)(NSString *beginDateStr, NSString *endDateSt
 
 @property (assign, nonatomic) NSTimeInterval duration;
 
+//是否显示顶部segmentedControl
+@property (assign, nonatomic) BOOL showTopSegmentedControl;
+
 @property (weak, nonatomic) id<DYLDatePickerViewDelegate> delegate;
 
 @property (copy, nonatomic) CallbackCompleteBlock completeBlock;
