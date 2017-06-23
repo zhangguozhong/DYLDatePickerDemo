@@ -10,4 +10,4 @@ pod 'Masonry'
 
 
 showTopSegmentedControl属性
-用于控制顶部segmentedControl控件是否显示，以满足更多时间选择的业务需求。
+用于控制顶部segmentedControl控件是否显示，以满足单个时间选择的业务需求。
