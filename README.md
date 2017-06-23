@@ -1,4 +1,13 @@
 # DYLDatePickerDemo
 时间选择器
 
-注意：项目需要引入第三方Masonry，该自定义控件提供了很好的封装思路，但还有很多需要完善的地方，后续会不断的更新完善；时间回调可以delegate或者是block，两种回调都设置的情况下，优先delegate回调；showTopSegmentedControl属性，可以控制顶部segmentedControl控件是否显示，以满足更多时间选择的业务需求。
+项目需要引入第三方Masonry
+pod 'Masonry'
+
+
+回调机制
+回调可以delegate或者是block，两种回调都设置的情况下，优先delegate回调；
+
+
+showTopSegmentedControl属性
+用于控制顶部segmentedControl控件是否显示，以满足更多时间选择的业务需求。
