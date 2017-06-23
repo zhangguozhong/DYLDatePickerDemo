@@ -6,7 +6,7 @@ pod 'Masonry'
 
 
 回调机制
-回调可以delegate或者是block，两种回调都设置的情况下，优先delegate回调；
+回调可以delegate或者是block，都设置的话优先delegate回调；
 
 
 showTopSegmentedControl属性
